@@ -20,41 +20,50 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a0d05, #2b1408);
+    background: linear-gradient(135deg, #140a05, #2a1408);
+    z-index: -6;
+}
+
+/* 🔥 SOFT GLOW OVERLAY */
+.glow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,80,0,0.15), transparent 70%);
     z-index: -5;
 }
 
 /* 🍕 FLOATING FOOD */
 .food {
     position: fixed;
-    width: 70px;
-    opacity: 0.18;
-    filter: blur(0.5px);
+    width: 65px;
+    opacity: 0.15;
+    filter: blur(0.8px);
     z-index: -4;
     animation: floatUp linear infinite;
 }
 
 /* POSITIONS */
-.food1 { left: 5%; animation-duration: 22s; animation-delay: 0s; }
-.food2 { left: 20%; animation-duration: 26s; animation-delay: 4s; }
-.food3 { left: 40%; animation-duration: 24s; animation-delay: 2s; }
-.food4 { left: 60%; animation-duration: 28s; animation-delay: 6s; }
-.food5 { left: 80%; animation-duration: 25s; animation-delay: 3s; }
+.food1 { left: 8%; animation-duration: 24s; animation-delay: 0s; }
+.food2 { left: 25%; animation-duration: 28s; animation-delay: 5s; }
+.food3 { left: 45%; animation-duration: 26s; animation-delay: 2s; }
+.food4 { left: 65%; animation-duration: 30s; animation-delay: 7s; }
+.food5 { left: 85%; animation-duration: 25s; animation-delay: 3s; }
 
 /* ANIMATION */
 @keyframes floatUp {
     0% {
-        transform: translateY(110vh) scale(0.8) rotate(0deg);
+        transform: translateY(110vh) scale(0.7) rotate(0deg);
         opacity: 0;
     }
-    15% {
-        opacity: 0.18;
+    20% {
+        opacity: 0.15;
     }
     50% {
-        transform: translateY(50vh) scale(1) rotate(10deg);
+        transform: translateY(50vh) scale(1) rotate(12deg);
     }
     100% {
-        transform: translateY(-120vh) scale(1.1) rotate(-10deg);
+        transform: translateY(-120vh) scale(1.1) rotate(-12deg);
         opacity: 0;
     }
 }
@@ -66,9 +75,10 @@ body {
     margin: 40px auto;
     padding: 25px;
     border-radius: 25px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
     text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 /* LOGO */
@@ -77,6 +87,7 @@ body {
     border-radius: 50%;
     background: white;
     margin-top: -60px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 /* TEXT */
@@ -97,7 +108,7 @@ h1 { margin: 10px 0; }
 .icon-btn {
     padding: 16px;
     border-radius: 18px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.22);
     transition: 0.3s;
 }
 
@@ -105,7 +116,7 @@ h1 { margin: 10px 0; }
 
 .icon-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    box-shadow: 0 0 20px rgba(255,120,0,0.7);
 }
 
 /* LABEL */
@@ -124,10 +135,11 @@ h1 { margin: 10px 0; }
 .call a {
     padding: 12px 28px;
     border-radius: 30px;
-    background: #ff0000;
+    background: linear-gradient(45deg, #ff0000, #ff7a00);
     color: white;
     text-decoration: none;
     font-weight: 600;
+    box-shadow: 0 5px 20px rgba(255,0,0,0.6);
 }
 </style>
 </head>
@@ -135,6 +147,7 @@ h1 { margin: 10px 0; }
 <body>
 
 <div class="bg"></div>
+<div class="glow"></div>
 
 <!-- 🍕 FLOATING FOOD -->
 <img src="https://img.icons8.com/emoji/96/pizza-emoji.png" class="food food1">
@@ -145,14 +158,13 @@ h1 { margin: 10px 0; }
 
 <div class="card">
 
-<img src="logo.png" class="logo">
+<img src="logo.jpg" class="logo">
 
 <h1>New York Richie's</h1>
 <p class="tagline">Pizza • Burgers • Sandwiches</p>
 
 <div class="icons">
 
-<!-- GOOGLE MAP -->
 <div class="item">
 <a href="https://www.google.com/maps/search/?api=1&query=5865+N+Glenwood+St+Garden+City+ID+83714" class="icon-btn">
 <img src="https://img.icons8.com/color/48/google-maps.png"/>
@@ -160,7 +172,6 @@ h1 { margin: 10px 0; }
 <div class="label">Google Map</div>
 </div>
 
-<!-- INSTAGRAM -->
 <div class="item">
 <a href="https://www.instagram.com/newyorkrichiesboise" class="icon-btn">
 <img src="https://img.icons8.com/color/48/instagram-new.png"/>
@@ -168,7 +179,6 @@ h1 { margin: 10px 0; }
 <div class="label">Instagram</div>
 </div>
 
-<!-- FACEBOOK -->
 <div class="item">
 <a href="https://www.facebook.com/share/1RXGRJzYYV" class="icon-btn">
 <img src="https://img.icons8.com/color/48/facebook-new.png"/>
@@ -176,7 +186,6 @@ h1 { margin: 10px 0; }
 <div class="label">Facebook</div>
 </div>
 
-<!-- GOOGLE REVIEW -->
 <div class="item">
 <a href="https://g.page/r/CUYItzqeGzFnEBM/review" class="icon-btn">
 <img src="https://img.icons8.com/color/48/google-logo.png"/>
@@ -184,7 +193,6 @@ h1 { margin: 10px 0; }
 <div class="label">Give Review</div>
 </div>
 
-<!-- WEBSITE -->
 <div class="item">
 <a href="https://newyorkrichiesboise.com" class="icon-btn">
 <img src="https://img.icons8.com/color/48/domain.png"/>
@@ -192,7 +200,6 @@ h1 { margin: 10px 0; }
 <div class="label">Order Online</div>
 </div>
 
-<!-- YELP -->
 <div class="item">
 <a href="https://www.yelp.com/biz/new-york-richies-garden-city" class="icon-btn">
 <img src="https://img.icons8.com/color/48/yelp.png"/>
@@ -204,7 +211,6 @@ h1 { margin: 10px 0; }
 
 </div>
 
-<!-- CALL -->
 <div class="call">
 <a href="tel:+12083230003">📞 Call Now</a>
 </div>
